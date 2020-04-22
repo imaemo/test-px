@@ -22,8 +22,21 @@
          src="https://www.facebook.com/tr?id={your-pixel-id-goes-here}&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Facebook Pixel Code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <a href="/landing.html">click to landing</a>
+    <script>
+        $('a').on('click', function(){
+            console.log('click to landing');
+            fbq('track', 'InitiateCheckout',
+            {
+                content_ids: ['partner_event_id'],
+                eventref: 'fb_oea' // or set to empty string
+            }
+            );
+        })
+    </script>
 </body>
 </html>
