@@ -19,24 +19,24 @@
   </script>
   <noscript>
     <img height="1" width="1" style="display:none" 
-         src="https://www.facebook.com/tr?id={your-pixel-id-goes-here}&ev=PageView&noscript=1"/>
+         src="https://www.facebook.com/tr?id=349000149319304&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Facebook Pixel Code -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-
+  <script>
+	function trackCVR() {
+		console.log("track lead event");
+		window._fbq.push('track', 'Lead');
+	}
+  </script>
 </head>
 <body>
-    <a href="/landing.html">click to landing</a>
-    <script>
-        $('a').on('click', function(){
-            console.log('click to landing');
-            fbq('track', 'InitiateCheckout',
-            {
-                content_ids: ['sku123'],
-                eventref: 'fb_oea' // or set to empty string
-            }
-            );
-        })
-    </script>
+    <iframe src='/landing.html'
+        style='visibility:visible !important; position:absolute; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'>
+		    
+    </iframe>
+
+
 </body>
 </html>
